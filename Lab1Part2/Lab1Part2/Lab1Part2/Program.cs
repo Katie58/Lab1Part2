@@ -372,15 +372,15 @@ namespace Lab1Part2
             int totalDays = totalDays1 - totalDays2;
 
             Console.WriteLine("KTCODE: Time difference in days is {0}", Math.Abs(totalDays));
-            Console.WriteLine("SimpleCODE: Difference in days: " + difference.Days);
+            Console.WriteLine("LibraryCODE: Difference in days: " + difference.Days);
 
             //calculate time difference in hours...
             Console.WriteLine("KTCODE: Time difference in hours is {0}", Math.Abs(totalDays * 24));
-            Console.WriteLine("SimpleCODE: Difference in hours: " + (difference.Days * 24)); //error w/ difference.Hours = 0
+            Console.WriteLine("LibraryCODE: Difference in hours: " + (difference.Days * 24)); //error w/ difference.Hours = 0
 
             //calculate time difference in minutes...
             Console.WriteLine("KTCODE: Time difference in minutes is {0}", Math.Abs(totalDays * 1440));
-            Console.WriteLine("SimpleCODE: Difference in minutes: " + (difference.Days * 1440)); //error w/ difference.Minutes = 0
+            Console.WriteLine("LibraryCODE: Difference in minutes: " + (difference.Days * 1440)); //error w/ difference.Minutes = 0
 
             //restart program...
             Restart();
