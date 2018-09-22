@@ -376,11 +376,11 @@ namespace Lab1Part2
 
             //calculate time difference in hours...
             Console.WriteLine("KTCODE: Time difference in hours is {0}", Math.Abs(totalDays * 24));
-            Console.WriteLine("SimpleCODE: Difference in hours: " + difference.Hours);
+            Console.WriteLine("SimpleCODE: Difference in hours: " + (difference.Days * 24));
 
             //calculate time difference in minutes...
             Console.WriteLine("KTCODE: Time difference in minutes is {0}", Math.Abs(totalDays * 1440));
-            Console.WriteLine("SimpleCODE: Difference in minutes: " + difference.Minutes);
+            Console.WriteLine("SimpleCODE: Difference in minutes: " + (difference.Days * 1440));
 
             //restart program...
             Restart();
