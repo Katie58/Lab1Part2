@@ -248,11 +248,11 @@ namespace Lab1Part2
             int monthdiff = month1t - month2t;
             int daydiff = day1t - day2t;
 
-            //**********simple code...
+            //**********Library code...
             DateTime start = new DateTime(year1, month1, day1);
             DateTime end = new DateTime(year2, month2, day2);
             TimeSpan difference = end - start;
-            //end simple code**********
+            //end Library code**********
 
             Console.WriteLine("KTCODE: Time difference is {0} years, {1} months, and {2} days", yeardiff, monthdiff, daydiff);
             Console.WriteLine(Environment.NewLine);
@@ -376,11 +376,11 @@ namespace Lab1Part2
 
             //calculate time difference in hours...
             Console.WriteLine("KTCODE: Time difference in hours is {0}", Math.Abs(totalDays * 24));
-            Console.WriteLine("SimpleCODE: Difference in hours: " + (difference.Days * 24));
+            Console.WriteLine("SimpleCODE: Difference in hours: " + (difference.Days * 24)); //error w/ difference.Hours = 0
 
             //calculate time difference in minutes...
             Console.WriteLine("KTCODE: Time difference in minutes is {0}", Math.Abs(totalDays * 1440));
-            Console.WriteLine("SimpleCODE: Difference in minutes: " + (difference.Days * 1440));
+            Console.WriteLine("SimpleCODE: Difference in minutes: " + (difference.Days * 1440)); //error w/ difference.Minutes = 0
 
             //restart program...
             Restart();
