@@ -264,81 +264,81 @@ namespace Lab1Part2
             int totalDays1 = 0;
             int totalDays2 = 0;
 
-        //list of # of days in current year to that month (in non leap years)...
-        Math:
+            //list of # of days in current year to that month (in non leap years)...
+            Math:
+            //calculate days in remaining years (including leap years)...
+            int DICY; //total days in current year assigned from list
+            int DIY = (yearCurrent * 365) - 365; //days in full years
+            int yearRemain = yeardiff % 4;
+            int leapYears = 0;
+
             if (yeardiff + monthdiff + daydiff != 0)
             {
                 var daysInCurrentYear = new Dictionary<int, int>
-                    {
-                        {1, daysCurrent},
-                        {2, 31 + daysCurrent},
-                        {3, 59 + daysCurrent},
-                        {4, 90 + daysCurrent},
-                        {5, 120 + daysCurrent},
-                        {6, 151 + daysCurrent},
-                        {7, 181 + daysCurrent},
-                        {8, 212 + daysCurrent},
-                        {9, 243 + daysCurrent},
-                        {10, 273 + daysCurrent},
-                        {11, 304 + daysCurrent},
-                        {12, 334 + daysCurrent},
-                    };
-
-                //calculate days in remaining years (including leap years)...
-                int DICY; //total days in current year
-                int DIY = (yearCurrent * 365) - 365; //days in full years
-                int yearRemain = yeardiff % 4;
-
-                if (yearCurrent % 4 == 0)
                 {
-                    if (monthCurrent > 2)
+                    {1, daysCurrent},
+                    {2, 31 + daysCurrent},
+                    {3, 59 + daysCurrent},
+                    {4, 90 + daysCurrent},
+                    {5, 120 + daysCurrent},
+                    {6, 151 + daysCurrent},
+                    {7, 181 + daysCurrent},
+                    {8, 212 + daysCurrent},
+                    {9, 243 + daysCurrent},
+                    {10, 273 + daysCurrent},
+                    {11, 304 + daysCurrent},
+                    {12, 334 + daysCurrent},
+                };
+                if (year1 % 4 == 0) //if leap year
+                {
+                    if (month1 > 2) //and after february
                     {
-                        DIY = DIY + 1;
+                        leapYears = leapYears + 1; //add a day
                     }
-                    if (yeardiff > 4)
+                    if (yeardiff > 4) //if more than 1 leap years
                     {
-                        DIY = DIY + ((yeardiff - yearRemain) / 4) + 1;
+                        leapYears = leapYears + ((yeardiff - yearRemain) / 4) + 1; //add prior leap years + current
                     }
                 }
-                if ((yearCurrent + 1) % 4 == 0)
+                if ((year1 + 1) % 4 == 0)
                 {
                     if (yeardiff > 1)
                     {
-                        if (monthCurrent > 2)
+                        if (month1 > 2)
                         {
-                            DIY = DIY + 1;
+                            leapYears = leapYears + 1;
                         }
                         if (yeardiff > 5)
                         {
-                            DIY = DIY + ((yeardiff - yearRemain) / 4) + 1;
+                            leapYears = leapYears + ((yeardiff - yearRemain) / 4) + 1;
                         }
                     }
                 }
-                if ((yearCurrent + 2) % 4 == 0)
+                if ((year1 + 2) % 4 == 0)
                 {
                     if (yeardiff > 2)
                     {
-                        if (monthCurrent > 2)
+                        if (month1 > 2)
                         {
-                            DIY = DIY + 1;
+                            leapYears = leapYears + 1;
                         }
                         if (yeardiff > 6)
                         {
-                            DIY = DIY + ((yeardiff - yearRemain) / 4) + 1;
+                            leapYears = leapYears + ((yeardiff - yearRemain) / 4) + 1;
                         }
                     }
                 }
-                if ((yearCurrent + 3) % 4 == 0)
+                if ((year1 + 3) % 4 == 0)
                 {
                     if (yeardiff > 3)
                     {
-                        if (monthCurrent > 2)
+                        if (month1 > 2)
                         {
-                            DIY = DIY + 1;
+                            leapYears = leapYears + 1;
                         }
                         if (yeardiff > 7)
                         {
-                            DIY = DIY + ((yeardiff - yearRemain) / 4) + 1;
+                            leapYears = leapYears + ((yeardiff - yearRemain) / 4) + 1;
                         }
                     }
                 }
@@ -368,8 +368,7 @@ namespace Lab1Part2
                     goto Start;
                 }
             }
-
-            int totalDays = totalDays1 - totalDays2;
+            int totalDays = (totalDays2 - totalDays1) + leapYears;
 
             Console.WriteLine("KTCODE: Time difference in days is {0}", Math.Abs(totalDays));
             if (year1 <= 0 || year1 > 9999 || year2 <= 0 || year2 > 9999)
