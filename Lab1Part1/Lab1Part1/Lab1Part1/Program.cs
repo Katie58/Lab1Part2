@@ -18,17 +18,15 @@ namespace Lab1Part1
             while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Escape))
             {
                 Console.Clear();
-                //set values from user input
                 Directions();
-                Console.WriteLine("Please provide two numbers...");
                 Console.WriteLine("Number 1:  ");
-                if (int.TryParse(Console.ReadLine(), out input)) //checks for valid input
+                if (int.TryParse(Console.ReadLine(), out input)) //check for valid input
                 {
                     nmbr1 = input;
                 }
                 else
                 {
-                    Console.WriteLine("ERROR - Invalid Input");
+                    Invalid();
                     Retry();
                     Console.ReadKey();
                     continue;
@@ -40,7 +38,7 @@ namespace Lab1Part1
                 }
                 else
                 {
-                    Console.WriteLine("ERROR - Invalid Input");
+                    Invalid();
                     Retry();
                     Console.ReadKey();
                     continue;
@@ -107,6 +105,11 @@ namespace Lab1Part1
             Console.WriteLine("*digits will be added to corresponding digits and the sum of each must be equal*");
             Console.WriteLine("                    (example: for abc & xyz, ax=by=cz)");
             Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("Please provide two numbers...");
+        }
+        static void Invalid()
+        {
+            Console.WriteLine("ERROR - Invalid Input");
         }
     }
 }
