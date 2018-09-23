@@ -91,7 +91,7 @@ namespace Lab1Part1
         static Boolean Retry()
         {
             Console.WriteLine(Environment.NewLine);
-            Console.WriteLine("Press SPACEBAR to retry");
+            Console.WriteLine("Press the SPACEBAR to try again.");
             while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar))
             {
                 return false;
