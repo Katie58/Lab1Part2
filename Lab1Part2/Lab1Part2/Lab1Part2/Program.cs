@@ -264,16 +264,16 @@ namespace Lab1Part2
             int totalDays1 = 0;
             int totalDays2 = 0;
 
-            //list of # of days in current year to that month (in non leap years)...
+
             Math:
-            //calculate days in remaining years (including leap years)...
             int DICY; //total days in current year assigned from list
             int DIY = (yearCurrent * 365) - 365; //days in full years
             int yearRemain = yeardiff % 4;
             int leapYears = 0;
 
             if (yeardiff + monthdiff + daydiff != 0)
-            {
+            {            
+                //list of # of days in current year to that month (in non leap years)...
                 var daysInCurrentYear = new Dictionary<int, int>
                 {
                     {1, daysCurrent},
