@@ -30,9 +30,20 @@ namespace Lab1Part2
             thirty1[5] = 10;
             thirty1[6] = 12;
 
+            int error; //placeholder to check for valid input
+
             //request user input, check if input is valid, declare and assign valid values to variables, restart if invalid...
             Console.WriteLine("Please enter two dates");
             Console.WriteLine("First month number (example: enter 1 for January):  ");
+            if (!int.TryParse(Console.ReadLine(), out error)) //checks for valid input
+            {
+                Retry();
+                while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar))
+                {
+                    Console.Clear();
+                    goto Start;
+                }
+            }
             int month1 = Convert.ToInt32(Console.ReadLine());
             if (month1 < 1 || month1 > 12)
             {
@@ -44,6 +55,15 @@ namespace Lab1Part2
                 }
             }
             Console.WriteLine("First day:  ");
+            if (!int.TryParse(Console.ReadLine(), out error))
+            {
+                Retry();
+                while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar))
+                {
+                    Console.Clear();
+                    goto Start;
+                }
+            }
             int day1 = Convert.ToInt32(Console.ReadLine());
             if (Array.Exists(thirty, element => element == month1))
             {
@@ -82,6 +102,15 @@ namespace Lab1Part2
                 }
             }
             Console.WriteLine("First year:  ");
+            if (!int.TryParse(Console.ReadLine(), out error))
+            {
+                Retry();
+                while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar))
+                {
+                    Console.Clear();
+                    goto Start;
+                }
+            }
             int year1 = Convert.ToInt32(Console.ReadLine());
             if (day1 == 29)
             {
@@ -97,6 +126,15 @@ namespace Lab1Part2
                 }
             }
             Console.WriteLine("Second month:  ");
+            if (!int.TryParse(Console.ReadLine(), out error))
+            {
+                Retry();
+                while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar))
+                {
+                    Console.Clear();
+                    goto Start;
+                }
+            }
             int month2 = Convert.ToInt32(Console.ReadLine());
             if (month2 < 1 || month2 > 12)
             {
@@ -108,6 +146,15 @@ namespace Lab1Part2
                 }
             }
             Console.WriteLine("Second day:  ");
+            if (!int.TryParse(Console.ReadLine(), out error))
+            {
+                Retry();
+                while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar))
+                {
+                    Console.Clear();
+                    goto Start;
+                }
+            }
             int day2 = Convert.ToInt32(Console.ReadLine());
             if (Array.Exists(thirty, element => element == month2))
             {
@@ -146,6 +193,15 @@ namespace Lab1Part2
                 }
             }
             Console.WriteLine("Second year:  ");
+            if (!int.TryParse(Console.ReadLine(), out error))
+            {
+                Retry();
+                while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar))
+                {
+                    Console.Clear();
+                    goto Start;
+                }
+            }
             int year2 = Convert.ToInt32(Console.ReadLine());
             if (day2 == 29)
             {
