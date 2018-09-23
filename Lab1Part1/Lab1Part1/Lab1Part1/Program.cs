@@ -105,7 +105,7 @@ namespace Lab1Part1
             Console.WriteLine("Each digit will be added to the corresponding digit, and the sums must all be equal.");
             Console.WriteLine("                    (example: for abc & xyz, ax=by=cz)");
             Console.WriteLine(Environment.NewLine);
-            Console.WriteLine("Please provide two numbers...");
+            Console.WriteLine("Please provide two valid numbers...");
         }
         static void Invalid()
         {
