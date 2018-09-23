@@ -27,7 +27,6 @@ namespace Lab1Part1
                 else
                 {
                     Invalid();
-                    Retry();
                     Console.ReadKey();
                     continue;
                 }
@@ -39,7 +38,6 @@ namespace Lab1Part1
                 else
                 {
                     Invalid();
-                    Retry();
                     Console.ReadKey();
                     continue;
                 }
@@ -110,6 +108,7 @@ namespace Lab1Part1
         static void Invalid()
         {
             Console.WriteLine("ERROR - Invalid Input");
+            Retry();
         }
     }
 }
