@@ -15,7 +15,7 @@ namespace Lab1Part1
             int nmbr1 = 0; //input #1
             int nmbr2 = 0; //input #2
 
-            while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Escape))
+            while (true)
             {
                 Console.Clear();
                 Directions();
