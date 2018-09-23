@@ -43,12 +43,12 @@ namespace Lab1Part1
                     Console.ReadKey();
                     continue;
                 }
-                CalculateSum(nmbr1, nmbr2);
+                Calculate(nmbr1, nmbr2);
                 Retry();
                 Console.ReadKey();
             }
         } //**********end main method**********
-        static Boolean CalculateSum(int nmbr1, int nmbr2)
+        static Boolean Calculate(int nmbr1, int nmbr2)
         {
             int value1; //place value of #1
             int value2; //place value of #2
