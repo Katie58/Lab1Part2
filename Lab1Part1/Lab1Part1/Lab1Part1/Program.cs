@@ -14,36 +14,43 @@ namespace Lab1Part1
             int input; //placeholder for user input
             int nmbr1 = 0; //input #1
             int nmbr2 = 0; //input #2
+            Boolean retry = true;
 
-            while (true)
+            while (retry)
             {
                 Console.Clear();
-                Directions();
+                DisplayDirections();
                 Console.WriteLine("Number 1:  ");
-                if (int.TryParse(Console.ReadLine(), out input)) //check for valid input
+                if (int.TryParse(Console.ReadLine(), out input) && input >= 0) //check for valid input
                 {
                     nmbr1 = input;
                 }
                 else
                 {
-                    Invalid();
-                    Console.ReadKey();
+                    DisplayInvalid();
+                    retry = Retry();
                     continue;
                 }
                 Console.WriteLine("Number 2:  ");
-                if (int.TryParse(Console.ReadLine(), out input))
+                if (int.TryParse(Console.ReadLine(), out input) && input >= 0)
                 {
                     nmbr2 = input;
                 }
                 else
                 {
-                    Invalid();
-                    Console.ReadKey();
+                    DisplayInvalid();
+                    retry = Retry();
                     continue;
                 }
-                Calculate(nmbr1, nmbr2);
-                Retry();
-                Console.ReadKey();
+                if (nmbr1.ToString().Length != nmbr2.ToString().Length)
+                {
+                    Console.WriteLine("***Please provide numbers with equal place values.***");
+                    retry = Retry();
+                    continue;
+                }
+                Boolean result = Calculate(nmbr1, nmbr2);
+                Console.WriteLine(result);
+                retry = Retry();         
             }
         } //**********end main method**********
         static Boolean Calculate(int nmbr1, int nmbr2)
@@ -78,25 +85,24 @@ namespace Lab1Part1
                 //compare digits 
                 Console.WriteLine(Environment.NewLine);
                 Console.WriteLine("Are the sums of the corresponding digits the same?");
-                Console.Write(Array.TrueForAll(sum, i => i == sum[0]));
+                return Array.TrueForAll(sum, i => i == sum[0]);
             }
             else
             {
-                Console.Write("***Please provide numbers with equal place values.***");
+                return false;
             }
-            return true;
         }
         static Boolean Retry()
         {
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Press the SPACEBAR to try again.");
-            while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar))
+            if (Console.ReadKey().Key == ConsoleKey.Spacebar)
             {
-                return false;
+                return true;
             }
             return false;
         }
-        static void Directions()
+        static void DisplayDirections()
         {
             Console.WriteLine("                  Numbers must have equal place values.");
             Console.WriteLine("        (example: abc & xyz both have 3 digits and are equal in length)");
@@ -105,10 +111,9 @@ namespace Lab1Part1
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Please provide two valid numbers...");
         }
-        static void Invalid()
+        static void DisplayInvalid()
         {
             Console.WriteLine("ERROR - Invalid Input");
-            Retry();
         }
     }
 }
