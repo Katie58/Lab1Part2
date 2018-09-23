@@ -53,25 +53,25 @@ namespace Lab1Part1
             int value1; //place value of #1
             int value2; //place value of #2
 
-            //get place values
+            //find place values
             value1 = nmbr1.ToString().Length;
             value2 = nmbr2.ToString().Length;
 
-            //display place value
+            //display place values
             Console.WriteLine(Environment.NewLine);
-            Console.WriteLine("place value of first: {0}", value1);
-            Console.WriteLine("place value of second: {0}", value2);
+            Console.WriteLine("Place value of first number: {0}", value1);
+            Console.WriteLine("Place value of second number: {0}", value2);
 
-            //assign arrays
+            //assign digits to arrays
             int[] ray1 = nmbr1.ToString().Select(t => int.Parse(t.ToString())).ToArray();
             int[] ray2 = nmbr2.ToString().Select(p => int.Parse(p.ToString())).ToArray();
             int[] sum = new int[value1];
 
             if (value1 == value2) //compare place values
             {
-                Console.WriteLine("Place Values are equal");
+                Console.WriteLine("Place Values are Equal");
                 Console.WriteLine(Environment.NewLine);
-                Console.WriteLine("corresponding digits added together: ");
+                Console.WriteLine("Corresponding digits added together: ");
                 for (int i = 0; i < value1; i++)
                 {
                     sum[i] = ray1[i] + ray2[i]; //add digits into new array
@@ -79,12 +79,12 @@ namespace Lab1Part1
                 }
                 //compare digits 
                 Console.WriteLine(Environment.NewLine);
-                Console.WriteLine("are the sum of the corresponding digits the same?");
+                Console.WriteLine("Are the sums of the corresponding digits the same?");
                 Console.Write(Array.TrueForAll(sum, i => i == sum[0]));
             }
             else
             {
-                Console.Write("***Please provide numbers with equal place values***");
+                Console.Write("***Please provide numbers with equal place values.***");
             }
             return true;
         }
@@ -100,9 +100,9 @@ namespace Lab1Part1
         }
         static void Directions()
         {
-            Console.WriteLine("                  *numbers must have equal place values*");
+            Console.WriteLine("                  Numbers must have equal place values.");
             Console.WriteLine("        (example: xxx & yyy both have 3 digits and are equal in length)");
-            Console.WriteLine("*digits will be added to corresponding digits and the sum of each must be equal*");
+            Console.WriteLine("Each digit will be added to the corresponding digit, and the sums must all be equal.");
             Console.WriteLine("                    (example: for abc & xyz, ax=by=cz)");
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Please provide two numbers...");
