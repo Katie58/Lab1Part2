@@ -101,9 +101,9 @@ namespace Lab1Part1
         static void Directions()
         {
             Console.WriteLine("                  Numbers must have equal place values.");
-            Console.WriteLine("        (example: xxx & yyy both have 3 digits and are equal in length)");
+            Console.WriteLine("        (example: abc & xyz both have 3 digits and are equal in length)");
             Console.WriteLine("Each digit will be added to the corresponding digit, and the sums must all be equal.");
-            Console.WriteLine("                    (example: for abc & xyz, ax=by=cz)");
+            Console.WriteLine("                  (example: for abc & xyz, ax = by = cz)");
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Please provide two valid numbers...");
         }
