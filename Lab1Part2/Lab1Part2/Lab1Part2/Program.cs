@@ -78,7 +78,7 @@ namespace Lab1Part2
             Console.WriteLine("To find the difference in time, please provide two dates.");
             Console.WriteLine(Environment.NewLine);
         }
-        static void DisplayDateDiff(DateTime date1, DateTime date2)//difference in month, day, year
+        static void DisplayDateDiff(DateTime date1, DateTime date2)//difference in years, months, days
         {
             //date to integers
             int year1 = date1.Year;
