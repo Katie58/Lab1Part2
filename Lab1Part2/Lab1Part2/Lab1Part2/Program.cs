@@ -21,7 +21,7 @@ namespace Lab1Part2
             {
                 Console.Clear();
                 DisplayDirections();
-                Console.WriteLine("First date (mm/dd/yyy):  ");
+                Console.WriteLine("First date (mm/dd/yyyy):  ");
                 if (DateTime.TryParseExact(Console.ReadLine(), "MM/dd/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out input))
                 {
                     date1 = input;
@@ -48,7 +48,7 @@ namespace Lab1Part2
                 retry = Retry();
             }
         } //**********end main method**********
-        static void DisplayTimeDiff(DateTime date1, DateTime date2)
+        static void DisplayTimeDiff(DateTime date1, DateTime date2)//difference in days, hours, minutes
         {
             //difference in days, hours, and minutes
             DateTime start = date1;
@@ -78,7 +78,7 @@ namespace Lab1Part2
             Console.WriteLine("To find the difference in time, please provide two dates.");
             Console.WriteLine(Environment.NewLine);
         }
-        static void DisplayDateDiff(DateTime date1, DateTime date2)
+        static void DisplayDateDiff(DateTime date1, DateTime date2)//difference in month, day, year
         {
             //date to integers
             int year1 = date1.Year;
