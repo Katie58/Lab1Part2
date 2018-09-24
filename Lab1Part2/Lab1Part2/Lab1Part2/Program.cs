@@ -80,7 +80,7 @@ namespace Lab1Part2
         }
         static void DisplayDateDiff(DateTime date1, DateTime date2)
         {
-            //get date integers
+            //date to integers
             int year1 = date1.Year;
             int year2 = date2.Year;
             int month1 = date1.Month;
@@ -163,7 +163,7 @@ namespace Lab1Part2
             }
             Console.WriteLine(Environment.NewLine + "The difference between the two dates is {0} years, {1} months, and {2} days", (year1 - year2), (month1 - month2), (day1 - day2));
         }
-        //swap input dates to make sure difference is positive...
+        //swap input dates
         static void SwapYear(ref int year1, ref int year2)
         {
             year1 ^= year2;
