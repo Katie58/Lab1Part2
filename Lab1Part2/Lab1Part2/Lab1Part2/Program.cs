@@ -55,9 +55,9 @@ namespace Lab1Part2
             DateTime end = date2;
             TimeSpan duration = end - start;
 
-            Console.WriteLine(Environment.NewLine + "The difference in days is " + duration.TotalDays);
-            Console.WriteLine(Environment.NewLine + "The difference in hours is " + duration.TotalHours);
-            Console.WriteLine(Environment.NewLine + "The difference in minutes is " + duration.TotalMinutes);
+            Console.WriteLine(Environment.NewLine + "The difference in days is " + Math.Abs(duration.TotalDays));
+            Console.WriteLine(Environment.NewLine + "The difference in hours is " + Math.Abs(duration.TotalHours));
+            Console.WriteLine(Environment.NewLine + "The difference in minutes is " + Math.Abs(duration.TotalMinutes));
         }
         static Boolean Retry()
         {
