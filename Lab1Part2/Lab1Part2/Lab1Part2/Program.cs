@@ -48,24 +48,16 @@ namespace Lab1Part2
                 retry = Retry();
             }
         } //**********end main method**********
-        //swap input dates to make sure difference is positive...
-        static void SwapYear(ref int year1, ref int year2)
+        static void DisplayTimeDiff(DateTime date1, DateTime date2)
         {
-            year1 ^= year2;
-            year2 ^= year1;
-            year1 ^= year2;
-        }
-        static void SwapMonth(ref int month1, ref int month2)
-        {
-            month1 ^= month2;
-            month2 ^= month1;
-            month1 ^= month2;
-        }
-        static void SwapDay(ref int day1, ref int day2)
-        {
-            day1 ^= day2;
-            day2 ^= day1;
-            day1 ^= day2;
+            //difference in days, hours, and minutes
+            DateTime start = date1;
+            DateTime end = date2;
+            TimeSpan duration = end - start;
+
+            Console.WriteLine(Environment.NewLine + "The difference in days is " + duration.TotalDays);
+            Console.WriteLine(Environment.NewLine + "The difference in hours is " + duration.TotalHours);
+            Console.WriteLine(Environment.NewLine + "The difference in minutes is " + duration.TotalMinutes);
         }
         static Boolean Retry()
         {
@@ -171,16 +163,24 @@ namespace Lab1Part2
             }
             Console.WriteLine(Environment.NewLine + "The difference between the two dates is {0} years, {1} months, and {2} days", (year1 - year2), (month1 - month2), (day1 - day2));
         }
-        static void DisplayTimeDiff(DateTime date1, DateTime date2)
+        //swap input dates to make sure difference is positive...
+        static void SwapYear(ref int year1, ref int year2)
         {
-            //difference in days, hours, and minutes
-            DateTime start = date1;
-            DateTime end = date2;
-            TimeSpan duration = end - start;
-
-            Console.WriteLine(Environment.NewLine + "The difference in days is " + duration.TotalDays);
-            Console.WriteLine(Environment.NewLine + "The difference in hours is " + duration.TotalHours);
-            Console.WriteLine(Environment.NewLine + "The difference in minutes is " + duration.TotalMinutes);
+            year1 ^= year2;
+            year2 ^= year1;
+            year1 ^= year2;
+        }
+        static void SwapMonth(ref int month1, ref int month2)
+        {
+            month1 ^= month2;
+            month2 ^= month1;
+            month1 ^= month2;
+        }
+        static void SwapDay(ref int day1, ref int day2)
+        {
+            day1 ^= day2;
+            day2 ^= day1;
+            day1 ^= day2;
         }
     }
 }
